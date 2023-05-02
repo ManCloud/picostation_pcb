@@ -1,6 +1,6 @@
 # picostation_pcb
 
-![PCB](./images/top.png "PCB") ![builtin](./images/builtin.jpp "builtin")
+![PCB](./images/top.png "PCB") ![builtin](./images/builtin.jpg "builtin")
 
 This is my adaption of the PicoStation PCB for [paulocode](https://github.com/paulocode)s [PicoStation](https://github.com/paulocode/picostation).  
 This layout was made to be completely purchaseable by JLCPCB therefore all partsnumbers etc. are included in the Project.
