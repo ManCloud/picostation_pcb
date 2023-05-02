@@ -1,21 +1,24 @@
 # picostation_pcb
 
-<img src="https://github.com/paulocode/picostation_pcb/raw/main/images/top.svg" alt="pcb" height="400"/><img src="https://github.com/paulocode/picostation_pcb/raw/main/images/FmRhUjRaEAAdwso.jpg" alt="pcb actual" height="400"/>
+![PCB](./images/top.png "PCB") ![builtin](./images/builtin.jpp "builtin")
 
-| ID | PART |
-|---|---|
-| C2 | 0805 10uF  |
-| C3 | 0805 10uF |
-| D1 | SOD-123 1N5819 |
-| D2 | 0805 LED |
-| J1 | SD card adaptor https://amzn.to/3Igir0n] 
-| J2 | 20-pin 1mm pitch FFC socket, bottom contact https://amzn.to/3WJF29v] 
-| J3 | Raspberry Pi Pico |
-| R1 | 0603 4.7kΩ |
-| U1 | TO-252 7805 https://amzn.to/3VBOSJq |
-| Cable | 20-pin 1mm pitch FFC cable, inverted (one side up, one side down), 200mm length |
+This is my adaption of the PicoStation PCB for [paulocode](https://github.com/paulocode)s [PicoStation](https://github.com/paulocode/picostation).  
+This layout was made to be completely purchaseable by JLCPCB therefore all partsnumbers etc. are included in the Project.
 
-* Links are samples only, I did not buy from them.
-* You can harvest a TO-252 7805 from PlayStation boards.
-* Software for this project is NOT yet released as of Jan 2023
-* The FFC cable is the same one that comes with an Xstation
+---
+
+## ! WARNING ! 
+The PCB seems to have a flaw which leads to code not being able to boot properly.
+Neither the PicoStation nor a simple blink application is then able to be booted.
+
+What we know so far:
+
+ - it depends on the RP2040, switching the RP2040 may solve the issue 
+ - the RP2040 is only unuseable on this board. If one swaps the RP2040 between e.g. this board and a RPi Pico, it will boot on the Pico board but won't on the PicoStation PCB.
+ - the UF2 loader works without a problem. If you upload the UF2-file the board will work just fine until reset.
+ - swapping the SPI-Flash does nothing  
+ - adding a 10k Pull-Up to Chip-Select does nothing  
+
+---
+
+ - The FFC cable is the same one that comes with an Xstation
