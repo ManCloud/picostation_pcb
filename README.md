@@ -7,17 +7,17 @@ This layout was made to be completely purchaseable by JLCPCB therefore all parts
 
 ---
 
-## ! WARNING ! 
-The PCB seems to have a flaw which leads to code not being able to boot properly.
-Neither the PicoStation nor a simple blink application is then able to be booted.
+## NOTICE ##
+for this board to properly work the crystal-wait time needs to be extended.  
 
-What we know so far:
+For this you need to add the follwing lines in CmakeLists.txt under "add_executable(picostation)" :
 
- - it depends on the RP2040, switching the RP2040 may solve the issue 
- - the RP2040 is only unuseable on this board. If one swaps the RP2040 between e.g. this board and a RPi Pico, it will boot on the Pico board but won't on the PicoStation PCB.
- - the UF2 loader works without a problem. If you upload the UF2-file the board will work just fine until reset.
- - swapping the SPI-Flash does nothing  
- - adding a 10k Pull-Up to Chip-Select does nothing  
+>target_compile_definitions(  
+>picostation PUBLIC  
+>PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64  
+>) 
+
+
 
 ---
 
